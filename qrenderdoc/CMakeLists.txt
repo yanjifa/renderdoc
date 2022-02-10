@@ -277,6 +277,7 @@ elseif(PySide2_FOUND AND Shiboken2_FOUND AND TARGET Shiboken2::libshiboken AND T
          ${CMAKE_BINARY_DIR}/qrenderdoc/qrenderdoc_cmake.pri
          "DEFINES+=PYSIDE2_ENABLED=1\n"
          "DEFINES+=PYSIDE2_SYS_PATH=${PYSIDE_PYTHONPATH}\n"
+         "LIBS+=-L${SHIBOKEN_PYTHON_LIBRARIES}\n"
          "LIBS+=-lshiboken2${SHIBOKEN_PYTHON_SHARED_LIBRARY_SUFFIX}\n")
 else()
     message(STATUS "PySide2 not found - Qt will not be accessible in python scripting. See https://github.com/baldurk/renderdoc/wiki/PySide2")
